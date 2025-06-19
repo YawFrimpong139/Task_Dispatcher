@@ -60,7 +60,7 @@ public class QueueMonitor implements Runnable {
                 workerPool.getTasksFailedCount());
     }
 
-    private void exportStatusToJson() {
+    public void exportStatusToJson() {
         try {
             // Create directory if it doesn't exist
             File outputDir = new File(statusExportPath);
