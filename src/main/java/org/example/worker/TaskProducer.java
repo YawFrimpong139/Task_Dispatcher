@@ -42,7 +42,7 @@ public class TaskProducer implements Runnable {
         }
     }
 
-    private void generateTasks(int count) {
+    public void generateTasks(int count) {
         for (int i = 0; i < count; i++) {
             String taskName = TASK_NAMES[random.nextInt(TASK_NAMES.length)];
             int priority = random.nextInt(10); // 0-9, higher is more priority
@@ -55,7 +55,7 @@ public class TaskProducer implements Runnable {
         logger.info("Producer {} submitted {} tasks", producerId, count);
     }
 
-    private String generateRandomPayload() {
+    public String generateRandomPayload() {
         int size = 100 + random.nextInt(900); // 100-1000 bytes
         StringBuilder sb = new StringBuilder(size);
         for (int i = 0; i < size; i++) {
